@@ -1,6 +1,6 @@
 {
-    "name": "Deniz PWA",
-    "short_name": "DenizPWA",
+    "name": "Steven PWA",
+    "short_name": "StevenPWA",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#fdfdfd",
