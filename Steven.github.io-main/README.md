@@ -1,1 +1,0 @@
-# DenizRuezgar.github.io
