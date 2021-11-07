@@ -79,3 +79,8 @@ h1 {
   padding: 0.3rem 1rem;
   border-radius: 20px;
 }
+#inhalte-werden-zentriert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
