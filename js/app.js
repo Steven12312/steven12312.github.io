@@ -40,7 +40,7 @@ if ("serviceWorker" in navigator) {
      target.appendChild(newLocation);
    }
    
-  /if ('geolocation' in navigator) {
+  if ('geolocation' in navigator) {
      document.getElementById('askButton').addEventListener('click', function () {
        navigator.geolocation.getCurrentPosition(function (location) {
          appendLocation(location, 'fetched');
