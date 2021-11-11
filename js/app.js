@@ -40,7 +40,7 @@ if ("serviceWorker" in navigator) {
      target.appendChild(newLocation);
    }
    
-  /* if ('geolocation' in navigator) {
+  /if ('geolocation' in navigator) {
      document.getElementById('askButton').addEventListener('click', function () {
        navigator.geolocation.getCurrentPosition(function (location) {
          appendLocation(location, 'fetched');
@@ -51,7 +51,7 @@ if ("serviceWorker" in navigator) {
      target.innerText = 'Geolocation API not supported.';}
 
       //Foto funktion 
-      function takePhoto() {
+    /*  function takePhoto() {
         if (!('ImageCapture' in window)) {
           alert('ImageCapture is not available');
           return;
