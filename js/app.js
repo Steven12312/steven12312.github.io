@@ -51,7 +51,7 @@ if ("serviceWorker" in navigator) {
      target.innerText = 'Geolocation API not supported.';}
 
       //Foto funktion 
-    /*  function takePhoto() {
+     function takePhoto() {
         if (!('ImageCapture' in window)) {
           alert('ImageCapture is not available');
           return;
@@ -141,5 +141,5 @@ if ("serviceWorker" in navigator) {
       return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
     }
     
-    var base64 = getBase64Image(document.getElementById("imageTag")); */ 
+    var base64 = getBase64Image(document.getElementById("imageTag")); 
 }
