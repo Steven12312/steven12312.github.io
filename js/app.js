@@ -1,5 +1,10 @@
 const container = document.querySelector(".container");
 
+//MenuBar
+function toggleMobileMenu(menu) {
+  menu.classList.toggle('open');
+}
+
 //document.addEventListener("DOMContentLoaded", showCoffees);
 const showCoffees = () => {
   let output = "";
