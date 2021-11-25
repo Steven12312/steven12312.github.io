@@ -233,10 +233,10 @@ if ("serviceWorker" in navigator) {
 //   }
 // }
 
-function consoleLog(data) {
-  var logElement = document.getElementById('log');
-  logElement.innerHTML += data + '\n';
-}
+// function consoleLog(data) {
+//   var logElement = document.getElementById('log');
+//   logElement.innerHTML += data + '\n';
+// }
 }
 
 }
