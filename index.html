@@ -10,6 +10,16 @@
   </head>
   
   <body>
+
+    <p>Current permission status is <b id="status">unavailable</b>.</p>
+
+    <p><button onclick="requestPermission()">Request permission</button></p>
+    <p><button onclick="nonPersistentNotification()">Non-persistent notification</button></p>
+    <p><button onclick="persistentNotification()">Persistent notification</button></p>
+
+
+
+
     <p>Estimated storage usage is <b id="usage">unknown</b> bytes.</p>
 <p>Estimated storage quota is <b id="quota">unknown</b> bytes.</p>
 <p>Estimated usage is <b id="percent">unknown</b>%.</p>
