@@ -8,107 +8,84 @@
     <link rel="manifest" href="manifest.json">
     <title>Steven PWA</title>
   </head>
-  
+  <style>
+    #map {
+     height: 400px;
+     width: 100%;
+    }
+
+    #searchTextField {
+      width: 300px;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+ </style>
   <body>
+    <h2>My Google Maps Demo</h2>
 
-    <p>Current permission status is <b id="status">unavailable</b>.</p>
-
-    <p><button onclick="requestPermission()">Request permission</button></p>
-    <p><button onclick="nonPersistentNotification()">Non-persistent notification</button></p>
-    <p><button onclick="persistentNotification()">Persistent notification</button></p>
-
+    <p>
+      See <a href="https://developers.google.com/maps/documentation/javascript/adding-a-google-map">marker example</a> (there you'll see how to get the API KEY)
+      and <a href="https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete">autocomplete example</a>.
+    </p>
+    <p>
+      I also recommend to read about <a href="https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple">info windows</a>
+      and <a href="https://developers.google.com/maps/documentation/javascript/examples/icon-simple">simple icons</a> (not used in this example).
+    </p>
+    
     <div>
-      <p>
-        <b><a href="/geolocation.html">Geolocation</a></b> permission status is <b id="geolocation-status">unknown</b>.
-        
-        <button onclick="requestGeolocation()">Request</button>
-      </p>
-      <p>
-        <b><a href="/local-notifications.html">Notifications</a></b> permission status is <b id="notifications-status">unknown</b>.
-        
-        <button onclick="requestNotifications()">Request</button>
-      </p>
-      <p>
-        <b><a href="/push-notifications.html">Push</a></b> permission status is <b id="push-status">unknown</b>.
-        
-        <button onclick="requestPush()">Request</button>
-      </p>
-      <p>
-        <b>Midi</b> permission status is <b id="midi-status">unknown</b>.
-        
-        <button onclick="requestMidi()">Request</button>
-      </p>
-      <p>
-        <b><a href="/camera-microphone.html">Camera</a></b> permission status is <b id="camera-status">unknown</b>.
-        
-        <button onclick="requestCamera()">Request</button>
-      </p>
-      <p>
-        <b><a href="/camera-microphone.html">Microphone</a></b> permission status is <b id="microphone-status">unknown</b>.
-        
-        <button onclick="requestMicrophone()">Request</button>
-      </p>
-      <p>
-        <b><a href="/background-sync.html">Background Sync</a></b> permission status is <b id="background-sync-status">unknown</b>.
-      </p>
-      <p>
-        <b><a href="/ambient-light.html">Ambient Light Sensor</a></b> permission status is <b id="ambient-light-sensor-status">unknown</b>.
-      </p>
-      <p>
-        <b><a href="/device-motion.html">Accelerometer</a></b> permission status is <b id="accelerometer-status">unknown</b>.
-      </p>
-      <p>
-        <b><a href="/device-motion.html">Gyroscope</a></b> permission status is <b id="gyroscope-status">unknown</b>.
-      </p>
-      <p>
-        <b><a href="/device-motion.html">Magnetometer</a></b> permission status is <b id="magnetometer-status">unknown</b>.
-      </p>
+      <input type="text" id="searchTextField">
     </div>
     
-    <p id="logTarget"></p>
+    <div id="map"></div>
+    
+    <script>
+      function initMap() {
 
+        // A couple of places
+        var brunchPos = {lat: 41.3882793, lng: 2.1615454};
+        var faboritPos = {lat: 41.3915233, lng: 2.1650537};
 
-    <!-- <p>Estimated storage usage is <b id="usage">unknown</b> bytes.</p>
-<p>Estimated storage quota is <b id="quota">unknown</b> bytes.</p>
-<p>Estimated usage is <b id="percent">unknown</b>%.</p>
-<p>Persistent storage status is <b id="persisted">unknown</b>.</p>
+        // Create map, draw it in the targetElem and sets the cameraPosition
+        var targetElem = document.getElementById('map');
+        var cameraPosition = { zoom: 13, center: faboritPos };
+        var map = new google.maps.Map(targetElem, cameraPosition);
 
-<p>
-  <button onclick="readContacts()">Read Contacts</button>
-</p>
-<pre id="log"></pre>
-<input type="file" id="asText">
-<textarea id="textbox" cols="50" rows="10"></textarea>
-<p><button id="save">Save!</button></p>
-<script>
-  window.onload = function() {
-  const asText = document.getElementById('asText');
-  const textbox = document.getElementById('textbox');
+        // We have already displayed the map, let's add markers
 
-  asText.addEventListener('change', function(e) {
-      const file = asText.files[0];
-      const textType = /text.*/;
+        // Create markers in the map
+        var marker1 = new google.maps.Marker({ map: map, position: faboritPos });
+        var marker2 = new google.maps.Marker({ map: map, position: brunchPos });
 
-      if (file.type.match(textType)) {
-          const reader = new FileReader();
+        // Now let's setup the autocomplete input, with which we can add more markers
 
-          reader.onload = function(e) {
-              textbox.innerText = reader.result;
+        // Autocomplete input
+        var input = document.getElementById('searchTextField');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo('bounds', map);
+
+        // Listen to autocomplete input
+        autocomplete.addListener('place_changed', function() {
+
+          var place = autocomplete.getPlace();
+          if (!place.geometry) {
+            // User entered the name of a place that was not suggested and
+            // pressed the Enter key, or the Place Details request failed.
+            window.alert("No details available for input: '" + place.name + "'. Select one of the results.");
+            return;
           }
 
-          reader.readAsText(file);    
-      } else {
-          textbox.innerText = "Dateityp nicht unterstützt";
+          // Add marker in map
+          var marker = new google.maps.Marker({ map: map, position: place.geometry.location });
+        });
+
       }
-  });
-}
-document.getElementById("save").addEventListener("click", function ()
-  {
-      var user = document.getElementById("textbox").value ;
-      localStorage.setItem("user", user) ;
-      console.log("Text is saved");
-      console.log(localStorage.getItem("user"));
-  } , false); -->
+    </script>
+
+    <!-- Loads maps library (with places library) and then calls initMap() -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap&key=YOUR_API_KEY_HERE">
+    </script>
+   
 </script>
 <script src="js/app.js"></script>
 
