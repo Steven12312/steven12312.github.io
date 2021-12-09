@@ -9,6 +9,48 @@ if ("serviceWorker" in navigator) {
       .catch(err => console.log("service worker not registered", err));
   });
 
+  function initMap() {
+
+    // A couple of places
+    //50.187907618234846, 8.916696434405555
+    var brunchPos = {lat: 50.187907618234846, lng: 8.916696434405555};
+    var faboritPos = {lat: 41.3915233, lng: 2.1650537};
+
+    // Create map, draw it in the targetElem and sets the cameraPosition
+    var targetElem = document.getElementById('map');
+    var cameraPosition = { zoom: 13, center: faboritPos };
+    var map = new google.maps.Map(targetElem, cameraPosition);
+
+    // We have already displayed the map, let's add markers
+
+    // Create markers in the map
+    var marker1 = new google.maps.Marker({ map: map, position: faboritPos });
+    var marker2 = new google.maps.Marker({ map: map, position: brunchPos });
+
+    // Now let's setup the autocomplete input, with which we can add more markers
+
+    // Autocomplete input
+    var input = document.getElementById('searchTextField');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    autocomplete.bindTo('bounds', map);
+
+    // Listen to autocomplete input
+    autocomplete.addListener('place_changed', function() {
+
+      var place = autocomplete.getPlace();
+      if (!place.geometry) {
+        // User entered the name of a place that was not suggested and
+        // pressed the Enter key, or the Place Details request failed.
+        window.alert("No details available for input: '" + place.name + "'. Select one of the results.");
+        return;
+      }
+
+      // Add marker in map
+      var marker = new google.maps.Marker({ map: map, position: place.geometry.location });
+    });
+
+  }
+
   // Note: This example requires that you consent to location sharing when
 // prompted by your browser. If you see the error "The Geolocation service
 // failed.", it means you probably did not give permission for the browser to
