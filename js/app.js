@@ -18,7 +18,7 @@ if (localStorage.getItem("count") == null) {
 console.log(count);
 
 if (localStorage.getItem("amount") == null) {
-  var balance = 100;
+  var balance = 1000;
 } else {
   balance = localStorage.getItem("balance");
 }
