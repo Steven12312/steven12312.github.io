@@ -17,7 +17,7 @@ if (localStorage.getItem("count") == null) {
 }
 console.log(count);
 
-if (localStorage.getItem("wert") == null) {
+if (localStorage.getItem("amount") == null) {
   var balance = 100;
 } else {
   balance = localStorage.getItem("balance");
@@ -36,26 +36,26 @@ if ("serviceWorker" in navigator) {
 function safe() {
   description = document.getElementById('Description').value;
   date = document.getElementById('Date').value;
-  kategorie = document.getElementById('Kategorie').value;
-  wert = document.getElementById('Wert').value;
+  category = document.getElementById('Category').value;
+  amount = document.getElementById('Amount').value;
 
   localStorage.setItem("description", description);
   localStorage.setItem("date", date);
-  localStorage.setItem("kategorie", kategorie);
-  localStorage.setItem("wert", wert);
+  localStorage.setItem("category", category);
+  localStorage.setItem("amount", amount);
 
   console.log("Gespeichert!");
 
   console.log(localStorage.getItem("description"));
   console.log(localStorage.getItem("date"));
-  console.log(localStorage.getItem("kategorie"));
-  console.log(localStorage.getItem("wert"));
+  console.log(localStorage.getItem("category"));
+  console.log(localStorage.getItem("amount"));
   Daten[count] = new Object();
   Daten[count]["Description"] = description;
   Daten[count]["Date"] = date;
-  Daten[count]["Kategorie"] = kategorie;
-  Daten[count]["Wert"] = wert;
-  balance = parseInt(balance) - parseInt(wert);
+  Daten[count]["Category"] = category;
+  Daten[count]["Amount"] = amount;
+  balance = parseInt(balance) - parseInt(amount);
   Daten[count]["Balance"] = balance;
   localStorage.setItem("balance", balance);
   localStorage.setItem("Daten", JSON.stringify(Daten));
