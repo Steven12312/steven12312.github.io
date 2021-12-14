@@ -64,8 +64,8 @@ function safe() {
   console.log(balance);
 }
 
-function ausgeben() {
-  var container = document.getElementById("ausgabe"),
+function show() {
+  var container = document.getElementById("show"),
     dl;
   if (container) {
     dl = container.appendChild(document.createElement("dl"));
