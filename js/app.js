@@ -44,7 +44,7 @@ function safe() {
   localStorage.setItem("category", category);
   localStorage.setItem("amount", amount);
 
-  console.log("Gespeichert!");
+  console.log("Safe!!");
 
   console.log(localStorage.getItem("description"));
   console.log(localStorage.getItem("date"));
