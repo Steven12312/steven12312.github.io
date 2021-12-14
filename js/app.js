@@ -83,6 +83,10 @@ function show() {
   }
 }
 
+function localStorageloeschen() {
+  localStorage.clear();
+}
+
 function reload() {
   location.reload();
 }
