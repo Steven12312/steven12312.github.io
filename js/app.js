@@ -1,9 +1,5 @@
 const container = document.querySelector(".container");
 
-function localStorageloeschen() {
-  localStorage.clear();
-}
-
 var Daten = new Array();
 if (localStorage.getItem("Daten") == null) {
   var Daten = new Array();
@@ -28,6 +24,7 @@ if (localStorage.getItem("amount") == null) {
 }
 
 
+
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
     navigator.serviceWorker
@@ -36,6 +33,10 @@ if ("serviceWorker" in navigator) {
       .catch(err => console.log("service worker not registered", err));
   });
 };
+
+function localStorageloeschen() {
+  localStorage.clear();
+}
 
 function safe() {
   description = document.getElementById('Description').value;
