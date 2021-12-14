@@ -1,10 +1,10 @@
 const container = document.querySelector(".container");
 
-var Daten = new Array();
+var Data = new Array();
 if (localStorage.getItem("Daten") == null) {
-  var Daten = new Array();
+  var Data = new Array();
 } else {
-  Daten = JSON.parse(localStorage.getItem("Daten"));
+  Data = JSON.parse(localStorage.getItem("Daten"));
 }
 console.log(localStorage.getItem("Daten"));
 
@@ -55,15 +55,15 @@ function safe() {
   console.log(localStorage.getItem("date"));
   console.log(localStorage.getItem("category"));
   console.log(localStorage.getItem("amount"));
-  Daten[count] = new Object();
-  Daten[count]["Description"] = description;
-  Daten[count]["Date"] = date;
-  Daten[count]["Category"] = category;
-  Daten[count]["Amount"] = amount;
+  Data[count] = new Object();
+  Data[count]["Description"] = description;
+  Data[count]["Date"] = date;
+  Data[count]["Category"] = category;
+  Data[count]["Amount"] = amount;
   balance = parseInt(balance) - parseInt(amount);
-  Daten[count]["Balance"] = balance;
+  Data[count]["Balance"] = balance;
   localStorage.setItem("balance", balance);
-  localStorage.setItem("Daten", JSON.stringify(Daten));
+  localStorage.setItem("Daten", JSON.stringify(Data));
   count++;
   localStorage.setItem("count", count);
   console.log(balance);
@@ -74,7 +74,7 @@ function show() {
     dl;
   if (container) {
     dl = container.appendChild(document.createElement("dl"));
-    Daten.forEach(function (m, i) {
+    Data.forEach(function (m, i) {
       var dd, dt, eigenschaft;
       dt = document.createElement("dt");
       dt.innerHTML = "Daten: ";
