@@ -34,24 +34,24 @@ if ("serviceWorker" in navigator) {
 };
 
 function safe() {
-  beschreibung = document.getElementById('Beschreibung').value;
+  Description = document.getElementById('Description').value;
   datum = document.getElementById('Datum').value;
   kategorie = document.getElementById('Kategorie').value;
   wert = document.getElementById('Wert').value;
 
-  localStorage.setItem("beschreibung", beschreibung);
+  localStorage.setItem("Description", Description);
   localStorage.setItem("datum", datum);
   localStorage.setItem("kategorie", kategorie);
   localStorage.setItem("wert", wert);
 
   console.log("Gespeichert!");
 
-  console.log(localStorage.getItem("beschreibung"));
+  console.log(localStorage.getItem("Description"));
   console.log(localStorage.getItem("datum"));
   console.log(localStorage.getItem("kategorie"));
   console.log(localStorage.getItem("wert"));
   Daten[count] = new Object();
-  Daten[count]["Beschreibung"] = beschreibung;
+  Daten[count]["Description"] = Description;
   Daten[count]["Datum"] = datum;
   Daten[count]["Kategorie"] = kategorie;
   Daten[count]["Wert"] = wert;
