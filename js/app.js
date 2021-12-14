@@ -1,107 +1,90 @@
 const container = document.querySelector(".container");
 
+var Daten = new Array();
+if (localStorage.getItem("Daten") == null) {
+  var Daten = new Array();
+} else {
+  Daten = JSON.parse(localStorage.getItem("Daten"));
+}
+console.log(localStorage.getItem("Daten"));
+
+
+
+if (localStorage.getItem("count") == null) {
+  var count = 0;
+} else {
+  count = localStorage.getItem("count");
+}
+console.log(count);
+
+if (localStorage.getItem("wert") == null) {
+  var balance = 100;
+} else {
+  balance = localStorage.getItem("balance");
+}
+
 
 if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
+  window.addEventListener("load", function () {
     navigator.serviceWorker
       .register("/serviceWorker.js")
       .then(res => console.log("service worker registered"))
       .catch(err => console.log("service worker not registered", err));
   });
+};
 
-  // Note: This example requires that you consent to location sharing when
-// prompted by your browser. If you see the error "The Geolocation service
-// failed.", it means you probably did not give permission for the browser to
-// locate you.
-let map, infoWindow;
+function safe() {
+  beschreibung = document.getElementById('Beschreibung').value;
+  datum = document.getElementById('Datum').value;
+  kategorie = document.getElementById('Kategorie').value;
+  wert = document.getElementById('Wert').value;
 
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 6,
-  });
-  infoWindow = new google.maps.InfoWindow();
+  localStorage.setItem("beschreibung", beschreibung);
+  localStorage.setItem("datum", datum);
+  localStorage.setItem("kategorie", kategorie);
+  localStorage.setItem("wert", wert);
 
-  const locationButton = document.createElement("button");
+  console.log("Gespeichert!");
 
-  locationButton.textContent = "Pan to Current Location";
-  locationButton.classList.add("custom-map-control-button");
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-  locationButton.addEventListener("click", () => {
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-
-          infoWindow.setPosition(pos);
-          infoWindow.setContent("Location found.");
-          infoWindow.open(map);
-          map.setCenter(pos);
-        },
-        () => {
-          handleLocationError(true, infoWindow, map.getCenter());
-        }
-      );
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
-    
-  });
+  console.log(localStorage.getItem("beschreibung"));
+  console.log(localStorage.getItem("datum"));
+  console.log(localStorage.getItem("kategorie"));
+  console.log(localStorage.getItem("wert"));
+  Daten[count] = new Object();
+  Daten[count]["Beschreibung"] = beschreibung;
+  Daten[count]["Datum"] = datum;
+  Daten[count]["Kategorie"] = kategorie;
+  Daten[count]["Wert"] = wert;
+  balance = parseInt(balance) - parseInt(wert);
+  Daten[count]["Balance"] = balance;
+  localStorage.setItem("balance", balance);
+  localStorage.setItem("Daten", JSON.stringify(Daten));
+  count++;
+  localStorage.setItem("count", count);
+  console.log(balance);
 }
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(
-    browserHasGeolocation
-      ? "Error: The Geolocation service failed."
-      : "Error: Your browser doesn't support geolocation."
-  );
-  infoWindow.open(map);
-}
-// A couple of places
-    //50.187907618234846, 8.916696434405555
-    var brunchPos = {lat: 50.187907618234846, lng: 8.916696434405555};
-    var faboritPos = {lat: 41.3915233, lng: 2.1650537};
-
-    // Create map, draw it in the targetElem and sets the cameraPosition
-    var targetElem = document.getElementById('map');
-    var cameraPosition = { zoom: 13, center: faboritPos };
-    var map = new google.maps.Map(targetElem, cameraPosition);
-
-    // We have already displayed the map, let's add markers
-
-    // Create markers in the map
-    var marker1 = new google.maps.Marker({ map: map, position: faboritPos });
-    var marker2 = new google.maps.Marker({ map: map, position: brunchPos });
-
-    // Now let's setup the autocomplete input, with which we can add more markers
-
-    // Autocomplete input
-    var input = document.getElementById('searchTextField');
-    var autocomplete = new google.maps.places.Autocomplete(input);
-    autocomplete.bindTo('bounds', map);
-
-    // Listen to autocomplete input
-    autocomplete.addListener('place_changed', function() {
-
-      var place = autocomplete.getPlace();
-      if (!place.geometry) {
-        // User entered the name of a place that was not suggested and
-        // pressed the Enter key, or the Place Details request failed.
-        window.alert("No details available for input: '" + place.name + "'. Select one of the results.");
-        return;
+function ausgeben() {
+  var container = document.getElementById("ausgabe"),
+    dl;
+  if (container) {
+    dl = container.appendChild(document.createElement("dl"));
+    Daten.forEach(function (m, i) {
+      var dd, dt, eigenschaft;
+      dt = document.createElement("dt");
+      dt.innerHTML = "Daten: ";
+      dl.appendChild(dt);
+      for (eigenschaft in m) {
+        dd = document.createElement("dd");
+        dd.innerHTML = eigenschaft + ": " + m[eigenschaft];
+        dl.appendChild(dd);
       }
-
-      // Add marker in map
-      var marker = new google.maps.Marker({ map: map, position: place.geometry.location });
     });
-      
+  }
+}
 
+function reload() {
+  location.reload();
 }
 
 
