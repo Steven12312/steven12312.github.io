@@ -1,5 +1,9 @@
 const container = document.querySelector(".container");
 
+function localStorageloeschen() {
+  localStorage.clear();
+}
+
 var Daten = new Array();
 if (localStorage.getItem("Daten") == null) {
   var Daten = new Array();
@@ -83,9 +87,7 @@ function show() {
   }
 }
 
-function localStorageloeschen() {
-  localStorage.clear();
-}
+
 
 function reload() {
   location.reload();
