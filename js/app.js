@@ -34,25 +34,25 @@ if ("serviceWorker" in navigator) {
 };
 
 function safe() {
-  Description = document.getElementById('Description').value;
-  datum = document.getElementById('Datum').value;
+  description = document.getElementById('Description').value;
+  date = document.getElementById('Date').value;
   kategorie = document.getElementById('Kategorie').value;
   wert = document.getElementById('Wert').value;
 
-  localStorage.setItem("Description", Description);
-  localStorage.setItem("datum", datum);
+  localStorage.setItem("description", description);
+  localStorage.setItem("date", date);
   localStorage.setItem("kategorie", kategorie);
   localStorage.setItem("wert", wert);
 
   console.log("Gespeichert!");
 
-  console.log(localStorage.getItem("Description"));
-  console.log(localStorage.getItem("datum"));
+  console.log(localStorage.getItem("description"));
+  console.log(localStorage.getItem("date"));
   console.log(localStorage.getItem("kategorie"));
   console.log(localStorage.getItem("wert"));
   Daten[count] = new Object();
-  Daten[count]["Description"] = Description;
-  Daten[count]["Datum"] = datum;
+  Daten[count]["Description"] = description;
+  Daten[count]["Date"] = date;
   Daten[count]["Kategorie"] = kategorie;
   Daten[count]["Wert"] = wert;
   balance = parseInt(balance) - parseInt(wert);
