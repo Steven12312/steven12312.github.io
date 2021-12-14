@@ -100,7 +100,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
       // Add marker in map
       var marker = new google.maps.Marker({ map: map, position: place.geometry.location });
     });
-
+      
 
 }
 
