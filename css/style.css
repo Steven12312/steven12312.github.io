@@ -168,7 +168,7 @@ ul li:hover {
   transition: 0.3s;
 }
 
-#login,
+/* #login,
 #signup {
   border-radius: 5px;
   padding: 5px 8px;
@@ -188,7 +188,7 @@ ul li:hover {
 
 #login a {
   color: #498afb;
-}
+} */
 
 #hamburger-icon {
   margin: auto 0;
