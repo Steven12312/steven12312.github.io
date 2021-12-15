@@ -88,8 +88,6 @@ function show() {
   }
 }
 
-
-
 function reload() {
   location.reload();
 }
