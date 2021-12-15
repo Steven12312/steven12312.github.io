@@ -1,12 +1,12 @@
 const container = document.querySelector(".container");
 
 var Data = new Array();
-if (localStorage.getItem("Daten") == null) {
+if (localStorage.getItem("Data") == null) {
   var Data = new Array();
 } else {
-  Data = JSON.parse(localStorage.getItem("Daten"));
+  Data = JSON.parse(localStorage.getItem("Data"));
 }
-console.log(localStorage.getItem("Daten"));
+console.log(localStorage.getItem("Data"));
 
 
 
@@ -63,7 +63,7 @@ function safe() {
   balance = parseInt(balance) - parseInt(amount);
   Data[count]["Balance"] = balance;
   localStorage.setItem("balance", balance);
-  localStorage.setItem("Daten", JSON.stringify(Data));
+  localStorage.setItem("Data", JSON.stringify(Data));
   count++;
   localStorage.setItem("count", count);
   console.log(balance);
@@ -77,7 +77,7 @@ function show() {
     Data.forEach(function (m, i) {
       var dd, dt, eigenschaft;
       dt = document.createElement("dt");
-      dt.innerHTML = "Daten: ";
+      dt.innerHTML = "Data: ";
       dl.appendChild(dt);
       for (eigenschaft in m) {
         dd = document.createElement("dd");
