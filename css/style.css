@@ -5,109 +5,19 @@
   box-sizing: border-box;
 }
 
-body {
+ body {
   text-align: center;
   background: #fdfdfd;
   font-family: "Nunito", sans-serif;
-  font-size: 1rem;
+  font-size: 1rem; 
  
 }
-button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
 
-main {
-  max-width: 900px;
-  margin: auto;
-  padding: 0.5rem;
-  text-align: center;
-}
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-ul {
-  list-style: none;
-  display: flex;
-}
-
-li {
-  margin-right: 1rem;
-}
-
-h1 {
+ h1 {
   color: #e74c3c;
   margin-bottom: 0.5rem;
-}
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  grid-gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  padding: 1rem 0;
-}
-.card {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 15rem auto;
-  height: 15rem;
-  background: #fff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  border-radius: 10px;
-  margin: auto;
-  overflow: hidden;
-}
+} 
 
-.card--avatar {
-  width: 100%;
-  height: 10rem;
-  object-fit: cover;
-}
-
-.card--title {
-  color: #222;
-  font-weight: 700;
-  text-transform: capitalize;
-  font-size: 1.1rem;
-  margin-top: 0.5rem;
-}
-
-.card--link {
-  text-decoration: none;
-  background: #db4938;
-  color: #fff;
-  padding: 0.3rem 1rem;
-  border-radius: 20px;
-}
-#inhalte-werden-zentriert {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.container {
-  perspective: 300;
-  -webkit-perspective: 300;
-}
-
-#imgLogo {
-  width: 275px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding: 15px;
-}
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
@@ -168,109 +78,10 @@ ul li:hover {
   transition: 0.3s;
 }
 
-/* #login,
-#signup {
-  border-radius: 5px;
-  padding: 5px 8px;
-}
-
-#login {
-  border: 1px solid #498afb;
-}
-
-#signup {
-  border: 1px solid #ff3860;
-}
-
-#signup a {
-  color: #ff3860;
-}
-
-#login a {
-  color: #498afb;
-} */
-
-#hamburger-icon {
-  margin: auto 0;
-  display: none;
-  cursor: pointer;
-}
-
-#hamburger-icon div {
-  width: 35px;
-  height: 3px;
-  background-color: white;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
-.open .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
-  transform: rotate(-45deg) translate(-6px, 6px);
-}
-
-.open .bar2 {
-  opacity: 0;
-}
-
-.open .bar3 {
-  -webkit-transform: rotate(45deg) translate(-6px, -8px);
-  transform: rotate(45deg) translate(-6px, -8px);
-}
-
-.open .mobile-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.mobile-menu {
-  display: none;
-  position: absolute;
-  top: 50px;
-  left: 0;
-  height: calc(100vh - 50px);
-  width: 100%;
-}
-
-.mobile-menu li {
-  margin-bottom: 10px;
-}
-
-@media only screen and (max-width: 600px) {
-  header nav {
-    display: none;
-  }
-
-  #hamburger-icon {
-    display: block;
-  }
-
-  .btn-file {
-    position: relative;
-    overflow: hidden;
-    margin: 10px;
-}
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0;
-    outline: none;
-    background: #fff;
-    cursor: inherit;
-    display: block;
-}
-
-/*Set the size of the div element that contains the map
-#map {
-  height: 400px;
-  //The height is 400 pixels 
-  width: 100%;
-  //The width is the width of the web page 
-}*/
-
+#display_image{
+  width: 400px;
+  height: 225px;
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
 }
