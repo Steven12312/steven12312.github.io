@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/newstyle.css" />
+</head>
+<!-- Shop gestaltung  -->
+
+<body>
+  <H1>Sambrothers Lieferservice</H1>
+  <img src="Sambrothers.PNG" height="100px" width="150px">
+  <h3>*****</h3>
+  <!-- <input type="file" id="image_input">
+  <center>
+    <div id="display_image"></div>
+  </center> -->
+
+
+<h3>Ordering for delivery:</h3>
+
+  <span class="glf-button" data-glf-cuid="613ed175-0f22-4c3a-9827-1d044bc72246"
+    data-glf-ruid="3507377a-d323-4aa9-909e-e7bd10a2fcd4"> Menü Card  & Order for Dilevery</span>
+  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+
+<h3>or</h3>
+<h3>Reservate here: </h3>
+  
+
+
+  <form>
+
+    <div>
+      <label>Name: </label> 
+      <input type="text" id="Description" placeholder="Name.."><br>
+      <br>
+      <label>E-mail: </label>
+      <input type="text" id="Email" placeholder="E-mail..">
+    </div>
+    </select>
+    <br>
+    <br>
+    <div>
+      <label>Date: </label>
+      <input type="date" id="Date" placeholder="Date...">
+    </div>
+    <br>
+    <div>
+      <label>Number of people </label> 
+      <input type="number" id="Amount" placeholder="Number of people...">
+    </div> <br> <br>
+
+    <input id="clickMe" type="button"  value="Book the Reservation" onclick="safe();reload();" />
+    <!-- <input id="clickMe" type="button" value="Show_List" onclick="show();" /> -->
+    <input id="clickMe" type="button" value="Cancel the Reservation" onclick="localStorageloeschen();" />
+
+  </form>
+  <!-- <div id="show"></div> -->
+
+
+  <!-- <script>
+    const image_input = document.querySelector("#image_input");
+    var uploaded_image;
+
+    image_input.addEventListener('change', function () {
+      const reader = new FileReader();
+      reader.addEventListener('load', () => {
+        uploaded_image = reader.result;
+        document.querySelector("#display_image").style.backgroundImage = `url(${uploaded_image})`;
+      });
+      reader.readAsDataURL(this.files[0]);
+    });
+
+  </script> -->
+
+  <script src="js/new.js"></script>
+  <script src="js/app.js"></script>
+ <br>
+  <h3>if you need any help or do you want to lat a comment than click on the Button below</h3>
+  
+  <button><a href="help.html" button>Help</a>
+</button>
+</body>
+
+
+</html>
