@@ -1,96 +1,137 @@
-const container = document.querySelector(".container");
+const container = document.querySelector(".container")
 
-var Data = new Array();
-if (localStorage.getItem("Data") == null) {
-  var Data = new Array();
-} else {
-  Data = JSON.parse(localStorage.getItem("Data"));
+//Current Location
+// var target = document.getElementById('target');
+// var watchId;
+
+// function appendLocation(location, verb) {
+//   verb = verb || 'updated';
+//   var newLocation = document.createElement('p');
+//   newLocation.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
+//   target.appendChild(newLocation);
+// }
+
+// if ('geolocation' in navigator) {
+//   document.getElementById('askButton').addEventListener('click', function () {
+//     navigator.geolocation.getCurrentPosition(function (location) {
+//       appendLocation(location, 'fetched');
+//     });
+//     watchId = navigator.geolocation.watchPosition(appendLocation);
+//   });
+// } else {
+//   target.innerText = 'Geolocation API not supported.';
+// }
+
+
+
+
+//Funktion to Load the Map 
+//here we can define the Zoom level and were our Startpoint is wenn we Open our App
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: { lat: 50.187877, lng: 8.916487 },
+    zoom: 18,
+    mapId: 'ff6cdabecf0dc222'
+  });
+
+  //We have created a Marker in our Map (Place of a Restourant)
+  const marker = new google.maps.Marker({
+    position: { lat: 50.187877, lng: 8.916487 },
+    map,
+    title: "Sambrothers",
+    //here we have put an PNG as an Marker 
+    icon: {
+      url: "Sambrothers.PNG",
+      scaledSize: new google.maps.Size(45, 40)
+    },
+    animation: google.maps.Animation.DROP
+  });
+
+  // Wre have created a Infobox on the Place where our Marker is
+  const infoWindowOptions = {
+    position: { lat: 50.187877, lng: 8.916487 },
+    maxWidth: 200
+  }
+
+  const infowindow = new google.maps.InfoWindow(infoWindowOptions);
+  infowindow.setContent(`
+<a href="Sambrothers.html" button>Sambrothers</a>
+`);
+
+  const infoWindowOpenOptions = {
+    map: map,
+    anchor: marker,
+    shouldFocus: false
+  }
+  marker.addListener("click", () => {
+    infowindow.open({
+      anchor: marker,
+      map,
+      shouldFocus: false,
+    });
+  });
+
 }
-console.log(localStorage.getItem("Data"));
+
+//Next Maker /////////////////////////////////////////////////////////////////////
+// const marker = new google.maps.Marker({
+//   position: { lat: 50.14720579999999, lng: 8.824969099999999 },
+//   map,
+//   title: "Sambrothers",
+//   //here we have put an PNG as an Marker 
+//   icon: {
+//     url: "Sambrothers.PNG",
+//     scaledSize: new google.maps.Size(45, 40)
+//   },
+//   animation: google.maps.Animation.DROP
+// });
+
+// Wre have created a Infobox on the Place where our Marker is
+// const infoWindowOptions = {
+//   position: { lat:  50.14720579999999, lng: 8.916487 },
+//   maxWidth: 200
+// }
+
+// const infowindow = new google.maps.InfoWindow(infoWindowOptions);
+// infowindow.setContent(`
+// <a href="Sambrothers.html" button>Sambrothers</a>
+// `);
+
+// const infoWindowOpenOptions = {
+//   map: map,
+//   anchor: marker,
+//   shouldFocus: false
+// }
+// marker.addListener("click", () => {
+//   infowindow.open({
+//     anchor: marker,
+//     map,
+//     shouldFocus: false,
+//   });
+// });
 
 
 
-if (localStorage.getItem("count") == null) {
-  var count = 0;
-} else {
-  count = localStorage.getItem("count");
-}
-console.log(count);
+// new google.maps.Marker({
+//   position: { lat: 50.14720579999999, lng: 8.824969099999999 },
+//   map,
+//   title: "Hello World!",
 
-if (localStorage.getItem("amount") == null) {
-  var balance = 1000;
-} else {
-  balance = localStorage.getItem("balance");
-}
+// });
+// new google.maps.Marker({
+//   map,
+//   title: "Hello World!",
+
+// });
 
 
+document.addEventListener("DOMContentLoaded", showCoffees)
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
     navigator.serviceWorker
       .register("/serviceWorker.js")
       .then(res => console.log("service worker registered"))
-      .catch(err => console.log("service worker not registered", err));
-  });
-};
-
-function localStorageloeschen() {
-  localStorage.clear();
+      .catch(err => console.log("service worker not registered", err))
+  })
 }
-
-function safe() {
-  description = document.getElementById('Description').value;
-  date = document.getElementById('Date').value;
-  category = document.getElementById('Category').value;
-  amount = document.getElementById('Amount').value;
-
-  localStorage.setItem("description", description);
-  localStorage.setItem("date", date);
-  localStorage.setItem("category", category);
-  localStorage.setItem("amount", amount);
-
-  console.log("Safe!!");
-
-  console.log(localStorage.getItem("description"));
-  console.log(localStorage.getItem("date"));
-  console.log(localStorage.getItem("category"));
-  console.log(localStorage.getItem("amount"));
-  Data[count] = new Object();
-  Data[count]["Description"] = description;
-  Data[count]["Date"] = date;
-  Data[count]["Category"] = category;
-  Data[count]["Amount"] = amount;
-  balance = parseInt(balance) - parseInt(amount);
-  Data[count]["Balance"] = balance;
-  localStorage.setItem("balance", balance);
-  localStorage.setItem("Data", JSON.stringify(Data));
-  count++;
-  localStorage.setItem("count", count);
-  console.log(balance);
-}
-
-function show() {
-  var container = document.getElementById("show"),
-    dl;
-  if (container) {
-    dl = container.appendChild(document.createElement("dl"));
-    Data.forEach(function (m, i) {
-      var dd, dt, eigenschaft;
-      dt = document.createElement("dt");
-      dt.innerHTML = "Data: ";
-      dl.appendChild(dt);
-      for (eigenschaft in m) {
-        dd = document.createElement("dd");
-        dd.innerHTML = eigenschaft + ": " + m[eigenschaft];
-        dl.appendChild(dd);
-      }
-    });
-  }
-}
-
-function reload() {
-  location.reload();
-}
-
-
-
