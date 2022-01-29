@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ 
+</head>
+<body>
+ <div><button onclick="getStream()">Grab video</button></div>
+  <div><video autoplay style="height: 180px; width: 240px;"></video></div>
+  <div><button onclick="takePhoto()">Take Photo!</button></div>
+  <div><img id="imageTag" width="240" height="180"></div> 
+
+<form method ="post">
+  <input type="button" value="Send Email" onclick="sendEmail()"/> 
+</form>
+   <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script type="text/javascript">
+  function sendEmail() {
+    Email.send({
+    
+      SecureToken : "e8b2e801-b0d1-4de7-935e-a0830df373d0",
+    To : 'steventchanra1111@gmail.com',
+    From : "steventchanra1111@gmail.com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+  }
+</script>
+</body>
+</html>
+
+
+
+
+
