@@ -29,4 +29,5 @@ self.addEventListener('install', function (e) {
     })
   )
   return self.clients.claim();
+
   });
