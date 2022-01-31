@@ -13,7 +13,7 @@
   <div><button onclick="takePhoto()">Take Photo!</button></div>
   <div><img id="imageTag" width="240" height="180"></div> 
 
-<form method ="post">
+<!-- <form method ="post">
   <input type="button" value="Send Email" onclick="sendEmail()"/> 
 </form>
    <script src="https://smtpjs.com/v3/smtp.js"></script>
@@ -29,9 +29,27 @@
 }).then(
   message => alert(message)
 );
-  }
+  } -->
+  <form
+  action="https://formspree.io/f/xzboeejj"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="_replyto">
+  </label>
+  <br>
+  <label>
+    Your message:
+    <input name="message">
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
 </script>
+<button> <a href="Sambrothers.html" button>Back to FOOD</a></button>
 </body>
+<script src="js/new.js"></script>
 </html>
 
 
