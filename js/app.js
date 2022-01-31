@@ -41,7 +41,7 @@ function initMap() {
     title: "Sambrothers",
     //here we have put an PNG as an Marker 
     icon: {
-      url: "Sambrothers.PNG",
+      url: "burger.png",
       scaledSize: new google.maps.Size(45, 40)
     },
     animation: google.maps.Animation.DROP
