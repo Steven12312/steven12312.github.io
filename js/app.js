@@ -70,6 +70,8 @@ function initMap() {
       shouldFocus: false,
     });
   });
+
+}
 //Next Maker /////////////////////////////////////////////////////////////////////
  const marker = new google.maps.Marker({
    position: { lat: 50.187212, lng: 8.91663533 },
@@ -82,9 +84,6 @@ function initMap() {
  },
   animation: google.maps.Animation.DROP
  });
-}
-
-
 
 // Wre have created a Infobox on the Place where our Marker is
 // const infoWindowOptions = {
