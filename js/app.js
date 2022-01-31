@@ -70,21 +70,21 @@ function initMap() {
       shouldFocus: false,
     });
   });
-
+//Next Maker /////////////////////////////////////////////////////////////////////
+ const marker = new google.maps.Marker({
+   position: { lat: 50.187212, lng: 8.91663533 },
+  map,
+  title: "PizzaBella",
+  //here we have put an PNG as an Marker 
+  icon: {
+    url: "pizza.PNG",
+     scaledSize: new google.maps.Size(45, 40)
+ },
+  animation: google.maps.Animation.DROP
+ });
 }
 
-//Next Maker /////////////////////////////////////////////////////////////////////
-// const marker = new google.maps.Marker({
-//   position: { lat: 50.14720579999999, lng: 8.824969099999999 },
-//   map,
-//   title: "Sambrothers",
-//   //here we have put an PNG as an Marker 
-//   icon: {
-//     url: "Sambrothers.PNG",
-//     scaledSize: new google.maps.Size(45, 40)
-//   },
-//   animation: google.maps.Animation.DROP
-// });
+
 
 // Wre have created a Infobox on the Place where our Marker is
 // const infoWindowOptions = {
