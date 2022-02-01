@@ -124,7 +124,7 @@ function initMap() {
 // });
 
 
-document.addEventListener("DOMContentLoaded", showCoffees)
+//document.addEventListener("DOMContentLoaded")
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
