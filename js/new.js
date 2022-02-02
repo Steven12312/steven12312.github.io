@@ -34,10 +34,10 @@ function safe() {
 
   console.log("Safe!!");
 
-  // console.log(localStorage.getItem("description"));
-  // console.log(localStorage.getItem("date"));
-  // console.log(localStorage.getItem("email"));
-  // console.log(localStorage.getItem("amount"));
+  console.log(localStorage.getItem("description"));
+  console.log(localStorage.getItem("date"));
+  console.log(localStorage.getItem("email"));
+  console.log(localStorage.getItem("amount"));
   // Data[count] = new Object();
   // Data[count]["Description"] = description;
   // Data[count]["Date"] = date;
