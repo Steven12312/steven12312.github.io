@@ -3,7 +3,6 @@
     "short_name": "StevenPWA",
     "start_url": "/index.html",
     "display": "standalone",
-    "scope": "https://steven123.github.io/",
    "background_color": "#fdfdfd",
     "theme_color": "#db4938",
     "orientation": "portrait-primary",
