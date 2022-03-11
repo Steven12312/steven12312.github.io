@@ -1,47 +1,25 @@
 const container = document.querySelector(".container")
 
-//Current Location
-// var target = document.getElementById('target');
-// var watchId;
-
-// function appendLocation(location, verb) {
-//   verb = verb || 'updated';
-//   var newLocation = document.createElement('p');
-//   newLocation.innerHTML = 'Location ' + verb + ': ' + location.coords.latitude + ', ' + location.coords.longitude + '';
-//   target.appendChild(newLocation);
-// }
-
-// if ('geolocation' in navigator) {
-//   document.getElementById('askButton').addEventListener('click', function () {
-//     navigator.geolocation.getCurrentPosition(function (location) {
-//       appendLocation(location, 'fetched');
-//     });
-//     watchId = navigator.geolocation.watchPosition(appendLocation);
-//   });
-// } else {
-//   target.innerText = 'Geolocation API not supported.';
-// }
-
-
-
-
 //Funktion to Load the Map 
 //here we can define the Zoom level and were our Startpoint is wenn we Open our App
+//50.13755268377812, 8.85292860685411
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: 50.187877, lng: 8.916487 },
+    center: { lat: 50.13755268377812, lng: 8.85292860685411 },
     zoom: 18,
     mapId: 'ff6cdabecf0dc222'
   });
 
+
   //We have created a Marker in our Map (Place of a Restourant)
   const marker = new google.maps.Marker({
-    position: { lat: 50.187877, lng: 8.916487 },
+    position: { lat: 50.03843532768981, lng:  7.9972985574715425 },
     map,
-    title: "Sambrothers",
+    title: "Amoli_OldHome",
     //here we have put an PNG as an Marker 
+    //50.03843532768981, 7.9972985574715425
     icon: {
-      url: "burger.png",
+      url: "RD.png",
       scaledSize: new google.maps.Size(45, 40)
     },
     animation: google.maps.Animation.DROP
@@ -55,7 +33,7 @@ function initMap() {
 
   const infowindow = new google.maps.InfoWindow(infoWindowOptions);
   infowindow.setContent(`
-<a href="Sambrothers.html" button>Sambrothers</a>
+<a href="RD.html" button>Amoli</a>
 `);
 
   const infoWindowOpenOptions = {
@@ -73,41 +51,41 @@ function initMap() {
 
 }
 //Next Maker /////////////////////////////////////////////////////////////////////
-//  const marker = new google.maps.Marker({
-//    position: { lat: 50.187212, lng: 8.91663533 },
-//   map,
-//   title: "PizzaBella",
+//  
+const marker = new google.maps.Marker({
+position: { lat: 50.13755268377812, lng: 8.85292860685411 },
+ map,
+ title: "Mein Leben",
 //   //here we have put an PNG as an Marker 
-//   icon: {
-//     url: "pizza.PNG",
-//      scaledSize: new google.maps.Size(45, 40)
-//  },
-//   animation: google.maps.Animation.DROP
-//  });
+ icon: {
+ url: "Herz.webp",
+ scaledSize: new google.maps.Size(45, 40)
+  },
+ animation: google.maps.Animation.DROP
+});
 
-// Wre have created a Infobox on the Place where our Marker is
-// const infoWindowOptions = {
-//   position: { lat:  50.14720579999999, lng: 8.916487 },
-//   maxWidth: 200
-// }
+//Wre have created a Infobox on the Place where our Marker is
+const infoWindowOptions = {
+position: { lat:  50.13755268377812, lng: 8.85292860685411 },
+maxWidth: 200
+ }
 
-// const infowindow = new google.maps.InfoWindow(infoWindowOptions);
-// infowindow.setContent(`
-// <a href="Sambrothers.html" button>Sambrothers</a>
-// `);
+const infowindow = new google.maps.InfoWindow(infoWindowOptions);
+infowindow.setContent(`
+<a href="bilder.html" button>Mein Leben </a>
+`);
 
-// const infoWindowOpenOptions = {
-//   map: map,
-//   anchor: marker,
-//   shouldFocus: false
-// }
-// marker.addListener("click", () => {
-//   infowindow.open({
-//     anchor: marker,
-//     map,
-//     shouldFocus: false,
-//   });
-// });
+const infoWindowOpenOptions = {
+ map: map,
+ anchor: marker,
+ shouldFocus: false }
+ marker.addListener("click", () => {
+infowindow.open({
+   anchor: marker,
+   map,
+  shouldFocus: false,
+  });
+ });
 
 
 
