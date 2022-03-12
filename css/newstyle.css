@@ -1,28 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
- body {
-  text-align: center;
-  background: #fdfdfd;
-  font-family: "Nunito", sans-serif;
-  font-size: 1rem; 
- 
-}
-a {
-  color: hotpink;
-}
-
- h1 {
-  color: #e74c3c;
-  margin-bottom: 0.5rem;
-} 
-
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 * {
   padding: 0;
@@ -36,57 +12,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-header a {
-  text-decoration: none;
-}
-
-header {
-  padding: 0 20px;
-  background-color: #1d1f1d;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-}
-
-#brand {
-  font-weight: bold;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-}
-
-#brand a {
-  color: #09c372;
-}
-
-ul {
-  list-style: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
 ul a {
-  color: white;
+  color: rgb(121, 86, 42);
 }
 
-ul li {
-  padding: 5px;
-  margin-left: 10px;
-}
-
-ul li:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
-}
-
-
-
-#display_image{
-  width: 400px;
-  height: 225px;
-  border: 1px solid black;
-  background-position: center;
-  background-size: cover;
-}
