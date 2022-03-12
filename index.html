@@ -10,7 +10,7 @@
 
   <link rel="stylesheet" href="css/style.css" />
   <title>Amoli App</title>
-<script src="js/new.js"></script>
+<!-- <script src="js/new.js"></script> -->
 </head>
  
   <body>
@@ -20,6 +20,20 @@
  </form>
 
 </body>
+<script>
+var password = "Amolimerijaan"
 
+function passcheck() {
+  
+  if (document.getElementById('pass1').value != password){
+    alert('Passwort ist Falsh');
+   return false;
+}
+
+if (document.getElementById('pass1').value == password){
+  alert('Amoli du hast es geschafft')
+}
+}
+</script>
 
 </html>
