@@ -1,29 +1,39 @@
 const container = document.querySelector(".container")
 
-//Funktion to Load the Map 
-//here we can define the Zoom level and were our Startpoint is wenn we Open our App
-//50.13755268377812, 8.85292860685411
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 50.13755268377812, lng: 8.85292860685411 },
     zoom: 18,
     mapId: 'ff6cdabecf0dc222'
+
   });
+const markers =[
+  [
+    "Amoli_OldHome",
+    50.03843532768981,
+    7.9972985574715425,
+    "RD.png",
+    45,
+    40
+  ]
+]
 
+for(let  i=0; i<marker.lenght; i++) {
+const currMarker = markers[i];
 
-  //We have created a Marker in our Map (Place of a Restourant)
-  const marker = new google.maps.Marker({
-    position: { lat: 50.03843532768981, lng:  7.9972985574715425 },
+   const marker = new google.maps.Marker({
+    position: { lat: currMarker[1], lng: currMarker[2] },
     map,
-    title: "Amoli_OldHome",
-    //here we have put an PNG as an Marker 
-    //50.03843532768981, 7.9972985574715425
+    title: currMarker[0],
     icon: {
-      url: "RD.png",
-      scaledSize: new google.maps.Size(45, 40)
+      url: currMarker[3],
+      scaledSize: new google.maps.Size(currMarker[4], currMarker[5])
     },
     animation: google.maps.Animation.DROP
   });
+
+  
+}
 
   // Wre have created a Infobox on the Place where our Marker is
   const infoWindowOptions = {
@@ -50,42 +60,58 @@ function initMap() {
   });
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Next Maker /////////////////////////////////////////////////////////////////////
 //  
-const marker = new google.maps.Marker({
-position: { lat: 50.13755268377812, lng: 8.85292860685411 },
- map,
- title: "Mein Leben",
-//   //here we have put an PNG as an Marker 
- icon: {
- url: "Herz.webp",
- scaledSize: new google.maps.Size(45, 40)
-  },
- animation: google.maps.Animation.DROP
-});
+// const marker = new google.maps.Marker({
+// position: { lat: 50.13755268377812, lng: 8.85292860685411 },
+//  map,
+//  title: "Mein Leben",
+// //   //here we have put an PNG as an Marker 
+//  icon: {
+//  url: "Herz.webp",
+//  scaledSize: new google.maps.Size(45, 40)
+//   },
+//  animation: google.maps.Animation.DROP
+// });
 
-//Wre have created a Infobox on the Place where our Marker is
-const infoWindowOptions = {
-position: { lat:  50.13755268377812, lng: 8.85292860685411 },
-maxWidth: 200
- }
+// //Wre have created a Infobox on the Place where our Marker is
+// const infoWindowOptions = {
+// position: { lat:  50.13755268377812, lng: 8.85292860685411 },
+// maxWidth: 200
+//  }
 
-const infowindow = new google.maps.InfoWindow(infoWindowOptions);
-infowindow.setContent(`
-<a href="bilder.html" button>Mein Leben </a>
-`);
+// const infowindow = new google.maps.InfoWindow(infoWindowOptions);
+// infowindow.setContent(`
+// <a href="bilder.html" button>Mein Leben </a>
+// `);
 
-const infoWindowOpenOptions = {
- map: map,
- anchor: marker,
- shouldFocus: false }
- marker.addListener("click", () => {
-infowindow.open({
-   anchor: marker,
-   map,
-  shouldFocus: false,
-  });
- });
+// const infoWindowOpenOptions = {
+//  map: map,
+//  anchor: marker,
+//  shouldFocus: false }
+//  marker.addListener("click", () => {
+// infowindow.open({
+//    anchor: marker,
+//    map,
+//   shouldFocus: false,
+//   });
+//  });
 
 
 
