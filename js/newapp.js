@@ -119,7 +119,7 @@ const marker3 = new google.maps.Marker({
   }
   const infowindow3 = new google.maps.InfoWindow(infoWindowOptions3);
 infowindow3.setContent(`
-<a href="bilder.html" button>Köln</a>
+<a href="köln.html" button>Köln</a>
 `);
 const infoWindowOpenOptions3 = {
   map: map,
