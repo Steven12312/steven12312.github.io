@@ -23,9 +23,7 @@ function initMap() {
     }
   
     const infowindow = new google.maps.InfoWindow(infoWindowOptions);
-    infowindow.setContent(`
-  <a href="RD.html" button>Amoli</a>
-  `);
+    infowindow.setContent(`<a href="RD.html" button>Amoli</a>`);
   
     const infoWindowOpenOptions = {
       map: map,
@@ -135,4 +133,38 @@ marker3.addListener("click", () => {
     shouldFocus: false,
   });
 });
+
+//Bruchköbel
+const marker4 = new google.maps.Marker({
+    position: { lat: 50.18792252009004, lng: 8.916817598034749  },
+    map,
+    title: "Stina",
+    icon: {
+      url: "Bilder/Köln.png",
+      scaledSize: new google.maps.Size(45, 40)
+    },
+    animation: google.maps.Animation.DROP
+  });
+  const infoWindowOptions4 = {
+    position: { lat: 50.18792252009004, lng: 8.916817598034749 },
+    maxWidth: 200
+  }
+  const infowindow4 = new google.maps.InfoWindow(infoWindowOptions4);
+infowindow4.setContent(`
+<a href="bilder.html" button>Stina</a>
+`);
+const infoWindowOpenOptions4 = {
+  map: map,
+  anchor: marker4,
+  shouldFocus: false
+}
+marker4.addListener("click", () => {
+  infowindow4.open({
+    anchor: marker4,
+    map,
+    shouldFocus: false,
+  });
+});
+
+
   }
