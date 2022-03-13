@@ -23,7 +23,7 @@ function initMap() {
     }
   
     const infowindow = new google.maps.InfoWindow(infoWindowOptions);
-    infowindow.setContent(`<a href="RD.html" button>Amoli</a>`);
+    infowindow.setContent(`<a href="RD.html" button>Rüdesheim</a>`);
   
     const infoWindowOpenOptions = {
       map: map,
