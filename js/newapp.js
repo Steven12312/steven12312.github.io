@@ -140,7 +140,7 @@ const marker4 = new google.maps.Marker({
     map,
     title: "Stina",
     icon: {
-      url: "Bilder/Köln.png",
+      url: "Bilder/Herz.webp",
       scaledSize: new google.maps.Size(45, 40)
     },
     animation: google.maps.Animation.DROP
