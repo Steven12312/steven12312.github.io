@@ -166,5 +166,36 @@ marker4.addListener("click", () => {
   });
 });
 
+//Frankfurt BDAY
+const marker5 = new google.maps.Marker({
+    position: { lat: 50.11035480949173, lng: 8.6051937961794  },
+    map,
+    title: "BDAY",
+    icon: {
+      url: "Bilder/Bday.jpg",
+      scaledSize: new google.maps.Size(45, 40)
+    },
+    animation: google.maps.Animation.DROP
+  });
+  const infoWindowOptions5 = {
+    position: { lat: 50.11035480949173, lng: 8.6051937961794 },
+    maxWidth: 200
+  }
+  const infowindow5 = new google.maps.InfoWindow(infoWindowOptions5);
+infowindow5.setContent(`
+<a href="Bday.html" button>BDAY</a>
+`);
+const infoWindowOpenOptions5 = {
+  map: map,
+  anchor: marker5,
+  shouldFocus: false
+}
+marker5.addListener("click", () => {
+  infowindow5.open({
+    anchor: marker5,
+    map,
+    shouldFocus: false,
+  });
+});
 
   }
