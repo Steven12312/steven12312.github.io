@@ -13,12 +13,11 @@ body{
 background-attachment: auto;
 }
 button {
-    background-color: #c30912; 
+    background-color: black; 
     border-radius: 12px;
-    color: white;
+    color: black;
     padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    text-align: white;
+    text-decoration-color: white;
     font-size: 20px;
   }
