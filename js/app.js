@@ -1,5 +1,6 @@
 const container = document.querySelector(".container")
 
+
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: { lat: 50.13755268377812, lng: 8.85292860685411 },
@@ -97,7 +98,6 @@ infowindow.open({
 //   title: "Hello World!",
 
 // });
-
 
 //document.addEventListener("DOMContentLoaded")
 
