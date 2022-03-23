@@ -32,7 +32,7 @@ header {
 }
 
 #brand a {
-  color: #09c372;
+  color: #c30912;
 }
 
 ul {
@@ -45,6 +45,7 @@ ul {
 
 ul a {
   color: white;
+  background-color: #030303;
 }
 
 ul li {
