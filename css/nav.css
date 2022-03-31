@@ -88,6 +88,7 @@ body {
 
 header a {
   text-decoration: none;
+  padding: 5px;
 }
 
 header {
@@ -124,34 +125,12 @@ ul a {
 
 ul li {
   padding: 5px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 ul li:hover {
   transform: scale(1.1);
   transition: 0.3s;
-}
-
-#login,
-#signup {
-  border-radius: 5px;
-  padding: 5px 8px;
-}
-
-#login {
-  border: 1px solid #498afb;
-}
-
-#signup {
-  border: 1px solid #ff3860;
-}
-
-#signup a {
-  color: #ff3860;
-}
-
-#login a {
-  color: #498afb;
 }
 
 #hamburger-icon {
@@ -215,7 +194,7 @@ ul li:hover {
     background-color:black; 
     border-radius: 12px;
     color: white;
-    padding: 15px 32px;
+    padding: 15px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
