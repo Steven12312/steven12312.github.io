@@ -43,8 +43,8 @@
   .masonryblocks{
     display: inline-block;
     background: #353836;
-    padding: 10px;
-    margin: 0 0 20px;
+    padding: 1px;
+    margin: 0 0 10px;
     width: 100%;
     box-sizing: border-box;
     }
