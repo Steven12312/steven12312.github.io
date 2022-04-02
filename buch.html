@@ -8,7 +8,7 @@
   <link rel="manifest" href="/manifest.json" />
   <!-- ios support -->
 
-  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/dia.css" />
   <title>Amoli App</title>
 
 </head>
@@ -16,60 +16,100 @@
 
 </head>
 <body>
+  <p>Willkommen zur Amoli App<br>Liebe dich Amoli <br><a href="amoli.html">Start the App </a></p>
+
   <header>
-    <div id="brand"><a href="amoli.html">Diashow</a></div>
-    <nav>
-      <ul>
-        <li><button><a href="Standort.html">Standort</a></button></li>
-        <li><button><a href="bilder.html">Bilder</a></button></li>
-        <li><button><a href="Sorry.html">Love</a></button></li>
-        <li><button><a href="Bday.html">BDay</a></button></li>
-        <li><button><a href="amoli.html">BACK </a></button></li>
-      </ul>
-    </nav>
-    <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-      <ul class="mobile-menu">
-        <li><button><a href="Standort.html">Standort</a></button></li>
-        <li><button><a href="bilder.html">Bilder</a></button></li>
-        <li><button><a href="Sorry.html">Love</a></button></li>
-        <li><button><a href="Bday.html">BDay</a></button></li>
-        <li><button><a href="amoli.html">BACK </a></button></li>
-      </ul>
-    </div>
-  </header>
-  <script src="js/index.js"></script>
+    <div class="masonryholder">
+ <!-- Slideshow container -->
+<div class="slideshow-container">
 
-
-<body>
-  <div class="masonryholder">
-  <div class="masonryblocks"><img class="mySlides" src="Bilder/dia/dia1.jpg"></div>
-  <div class="masonryblocks"><img class="mySlides" src="Bilder/dia/dia2.jpeg"></div>
-  <div class="masonryblocks"><img class="mySlides" src="Bilder/dia/dia3.jpeg"></div>
-  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
-</div>
+  <!-- Full-width images with number and caption text -->
  
-<script>
-  var slideIndex = 1;
-showDivs(slideIndex);
+  <div class="mySlides fade"> 
+    <div class="masonryblocks"> 
+    <img src="Bilder/dia/dia1.jpg" style="width:100%">
+    <div class="slide-textbereich">
+    <h3 class="slide-ueberschrift">Amoli du bist mein Leben❣️</h3></div>
+    </div></div></div>
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
+
+  <div class="mySlides fade">
+    <div class="masonryblocks">
+    <img src="Bilder/dia/dia3.jpeg" style="width:100%">
+    <div class="slide-textbereich">
+    <h3 class="slide-ueberschrift">Du bist mein Schatz ❣️</h3></div>
+  </div></div></div>
+
+  <div class="mySlides fade">
+    <div class="masonryblocks">
+    <img src="Bilder/dia/dia2.jpeg" style="width:100%">
+    <div class="slide-textbereich">
+    <h3 class="slide-ueberschrift">Du bist mein Schatz ❣️</h3></div>
+  </div></div></div>
+
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+<!-- <script>
+  let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
   }
-  x[slideIndex-1].style.display = "block";
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
 }
+
+
+</script> -->
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+
 </script>
+<center><button> <a href="amoli.html">CLICK HIER MERI JAAN</a></button></center>  
    
 </body>
