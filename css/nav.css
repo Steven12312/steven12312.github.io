@@ -124,7 +124,7 @@ ul {
 
 ul a {
   color: white;
-  background-color: #030303;
+  background-color:#1d1f1d;
 }
 
 ul li {
@@ -195,7 +195,7 @@ ul li:hover {
   }
 
   button {
-    background-color:black; 
+    background-color:#1d1f1d; 
     border-radius: 12px;
     color: white;
     padding: 15px 15px;
