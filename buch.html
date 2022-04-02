@@ -17,7 +17,7 @@
 </head>
 <body>
   <header>
-    <div id="brand"><a href="amoli.html">Amoli's Birthday</a></div>
+    <div id="brand"><a href="amoli.html">Diashow</a></div>
     <nav>
       <ul>
         <li><button><a href="Standort.html">Standort</a></button></li>
@@ -44,15 +44,35 @@
 
 
 <body>
-    <div class="masonryholder">
-        <div class="masonryblocks"><img src="Bilder/bday/BDay1.jpeg"></div>
-     <div class="masonryblocks"><video  controls>
-        <source src="Video/BDay18.mp4" type="video/mp4" </source>
-    </video>
+  <div class="masonryholder">
+  <div class="masonryblocks"><img class="mySlides" src="Bilder/dia/dia1.jpg"></div>
+  <div class="masonryblocks"><img class="mySlides" src="Bilder/dia/dia2.jpeg"></div>
+  <div class="masonryblocks"><img class="mySlides" src="Bilder/dia/dia3.jpeg"></div>
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
 </div>
- </div>
+
    
 
+<script>
+  var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+</script>
    
 
 </body>

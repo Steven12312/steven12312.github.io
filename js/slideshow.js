@@ -1,6 +1,3 @@
-function toggleMobileMenu(menu) {
-    menu.classList.toggle('open');
-}
 const indikatoren = document.getElementsByClassName("indikator");
 indikatoren[0].classList.add("aktiv");
 
