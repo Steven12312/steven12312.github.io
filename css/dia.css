@@ -1,9 +1,9 @@
 .slide-textbereich {
     position:relative;
     left: 0;
-    bottom: 0%;
+    bottom: 0;
     right: 0;
-    top: 70%;
+    top: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     text-align: center;
@@ -13,13 +13,13 @@
 .slide-ueberschrift {
     position: center;
     font-size: 2em;
-    margin: 10px 0;
+    margin: 10px 5px;
 }
 
 button {
-    background-color:black; 
-    border-radius: 12px;
-    color: white;
+    background-color: white; 
+    border-radius: 20px;
+    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
