@@ -46,7 +46,7 @@ ul {
 
 ul a {
   color: white;
-  background-color:#353836;
+  background-color:#1d1f1d;
 }
 
 ul li {
@@ -121,8 +121,6 @@ ul li:hover {
   }
 
 
-
-
 .slide-textbereich {
     position:relative;
     left: 0;
@@ -142,7 +140,7 @@ ul li:hover {
 }
 
 button {
-    background-color: #353836; 
+    background-color: #1d1f1d; 
     border-radius: 20px;
     color: black;
     padding: 15px 32px;
