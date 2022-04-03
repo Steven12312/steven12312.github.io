@@ -1,6 +1,6 @@
 {
-    "name": "Steven PWA",
-    "short_name": "StevenPWA",
+    "name": "The Amoli App",
+    "short_name": "AmoliApp",
     "start_url": "/index.html",
     "display": "standalone",
    "background_color": "#fdfdfd",
